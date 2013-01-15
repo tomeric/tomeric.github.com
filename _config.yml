@@ -1,0 +1,5 @@
+markdown: rdiscount
+pygments: true
+permalink: /:title.html
+plugins: ./_plugins
+exclude: Gemfile, Gemfile.lock, .rvmrc

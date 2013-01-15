@@ -1,0 +1,120 @@
+---
+# YAML Front Matter added to process this file
+# See: https://github.com/mojombo/jekyll/wiki/YAML-Front-Matter
+---
+
+@import 'inc/reset_revisited.css';
+
+$baseline: 24px;
+$max-width: 800px;
+
+$primary-background-color: #efefef;
+$primary-header-color: #102020;
+$primary-text-color: #1a2a2a;
+$primary-link-color: #a02020;
+
+$contrasted-background-color: #0c0c0c;
+$contrasted-header-color: #dfdfde;
+$contrasted-text-color: #9f9f9f;
+$contrasted-link-color: #20a0a0;
+
+$content-font-family: 'Raleway', sans-serif;
+$content-font-size: 16px;
+$content-line-height: $baseline;
+
+$header-font-family: $content-font-family;
+
+body {
+  font-family: $content-font-family;
+  font-weight: normal;
+  font-weight: 400;
+  font-size: $content-font-size;
+  line-height: $baseline;
+  
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 10px;
+  
+  background-color: $primary-background-color;
+  color: $primary-text-color;
+  
+  transition:         max-width 0.2s linear, background-color 0.2s ease-out, color 0.2s ease-in;
+  -moz-transition:    max-width 0.2s linear, background-color 0.2s ease-out, color 0.2s ease-in; /* Firefox 4 */
+  -webkit-transition: max-width 0.2s linear, background-color 0.2s ease-out, color 0.2s ease-in; /* Safari and Chrome */
+  -o-transition:      max-width 0.2s linear, background-color 0.2s ease-out, color 0.2s ease-in; /* Opera */
+  
+  .contrasted & {
+    background-color: $contrasted-background-color;
+    color: $contrasted-text-color;
+  }
+  
+  .large-font & {
+    font-size: $content-font-size * 1.5;
+    line-height: $baseline * 1.5;
+    max-width: $max-width * 1.25;
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-weight: bold;
+  font-weight: 700;
+  
+  color: $primary-header-color;
+  
+  .contrasted & {
+    color: $contrasted-header-color;
+  }
+}
+
+@for $i from 1 through 6 {
+  h#{$i} {
+    $importance:  7 - $i;
+
+    @if $importance <= 3 {
+      $importance: $importance + ($i * 0.25);
+    }
+    
+    $font-size:   $content-font-size * ($importance * 0.25);
+    $line-height: $baseline * ($importance * 0.25);
+    $margin-top:  $baseline * ($importance - 2) * 0.25;
+    
+    margin-top:  $margin-top;
+    font-size:   $font-size;
+    line-height: $line-height;
+    
+    .large-font & {
+      font-size:   $font-size   * 1.5;
+      line-height: $line-height * 1.5;
+      margin-top:  $margin-top  * 1.5;
+    }
+  }
+}
+
+ul, ol {
+  list-style: square inside;
+  margin-bottom: $baseline * 0.5;
+}
+
+ol {
+  list-style-type: decimal;
+}
+
+p {
+  margin-bottom: $baseline * 0.5;
+  
+  .large-font & {
+    margin-bottom: $baseline * 0.75;
+  }
+}
+
+a {
+  color: $primary-link-color;
+  
+  &:hover {
+    text-decoration: none;
+  }
+  
+  .contrasted & {
+    color: $contrasted-link-color;
+  }
+}
