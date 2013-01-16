@@ -1,5 +1,5 @@
 source :rubygems
 
-gem 'jekyll'
+gem 'jekyll',   :github => 'mojombo/jekyll'
 gem 'rdiscount'
 gem 'sass'
