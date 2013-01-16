@@ -8,21 +8,32 @@
 $baseline: 24px;
 $max-width: 800px;
 
-$primary-background-color: #efefef;
+$primary-background-color: #fafaeb;
+$primary-light-background-color: #fff;
+$primary-border-color: darken($primary-background-color, 20%);
 $primary-header-color: #102020;
 $primary-text-color: #1a2a2a;
 $primary-link-color: #a02020;
 
-$contrasted-background-color: #0c0c0c;
+$contrasted-background-color: #19324b;
+$contrasted-light-background-color: #4b6487;
+$contrasted-border-color: lighten($contrasted-background-color, 20%);
 $contrasted-header-color: #dfdfde;
-$contrasted-text-color: #9f9f9f;
-$contrasted-link-color: #20a0a0;
+$contrasted-text-color: #bfbfbf;
+$contrasted-link-color: #c02a2a;
 
 $content-font-family: 'Raleway', sans-serif;
 $content-font-size: 16px;
 $content-line-height: $baseline;
 
 $header-font-family: $content-font-family;
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
 
 body {
   font-family: $content-font-family;
@@ -31,17 +42,13 @@ body {
   font-size: $content-font-size;
   line-height: $baseline;
   
-  max-width: $max-width;
-  margin: 0 auto;
-  padding: 0 10px;
-  
   background-color: $primary-background-color;
   color: $primary-text-color;
   
-  transition:         max-width 0.2s linear, background-color 0.2s ease-out, color 0.2s ease-in;
-  -moz-transition:    max-width 0.2s linear, background-color 0.2s ease-out, color 0.2s ease-in; /* Firefox 4 */
-  -webkit-transition: max-width 0.2s linear, background-color 0.2s ease-out, color 0.2s ease-in; /* Safari and Chrome */
-  -o-transition:      max-width 0.2s linear, background-color 0.2s ease-out, color 0.2s ease-in; /* Opera */
+  transition:         width 0.2s linear, height 0.2s linear, max-width 0.2s linear, background-color 0.2s ease-out, color 0.2s ease-in, border-color 0.2s ease-in;
+  -moz-transition:    width 0.2s linear, height 0.2s linear, max-width 0.2s linear, background-color 0.2s ease-out, color 0.2s ease-in, border-color 0.2s ease-in;
+  -webkit-transition: width 0.2s linear, height 0.2s linear, max-width 0.2s linear, background-color 0.2s ease-out, color 0.2s ease-in, border-color 0.2s ease-in;
+  -o-transition:      width 0.2s linear, height 0.2s linear, max-width 0.2s linear, background-color 0.2s ease-out, color 0.2s ease-in, border-color 0.2s ease-in;
   
   .contrasted & {
     background-color: $contrasted-background-color;
@@ -51,6 +58,15 @@ body {
   .large-font & {
     font-size: $content-font-size * 1.5;
     line-height: $baseline * 1.5;
+  }
+}
+
+#content {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 10px;
+  
+  .large-font & {
     max-width: $max-width * 1.25;
   }
 }
@@ -109,12 +125,125 @@ p {
 
 a {
   color: $primary-link-color;
+  text-decoration: none;
   
   &:hover {
-    text-decoration: none;
+    color: darken($primary-link-color, 25%);
   }
   
   .contrasted & {
     color: $contrasted-link-color;
+    
+    &:hover {
+      color: lighten($contrasted-link-color, 25%);
+    }
+  }
+}
+
+.avatar {
+  $size: $baseline * 5;
+  $radius: $size * 0.6;
+  
+  &, img {
+    height: $size;
+    width: $size;
+    border-radius: $radius;
+  }
+  
+  border: 4px solid $primary-border-color;
+  border-color: rgba($primary-border-color, 0.8);
+  background: $primary-border-color;
+  background: rgba($primary-border-color, 0.8);
+  margin: $baseline auto;
+  
+  .large-font & {
+    &, img {
+      height: $size * 1.5;
+      width: $size * 1.5;
+      border-radius: $radius * 1.5;
+    }
+  }
+  
+  .contrasted & {
+    border: 4px solid $contrasted-border-color;
+    border-color: rgba($contrasted-border-color, 0.8);
+    background: $contrasted-border-color;
+    background: rgba($contrasted-border-color, 0.8);
+  }
+}
+
+.accessibility {
+  $button-size: $baseline;
+  $button-radius: $button-size * 0.6;
+  
+  display: block;
+  width: $button-size * 3 + 8px;
+  height: $button-size * 3 + 8px;
+  margin: $baseline auto;
+  text-align: center;
+  
+  .large-font & {
+    width: $button-size * 4.5 + 12px;
+    height: $button-size * 4.5 + 12px;
+  }
+  
+  a {
+    display: block;
+    width: $button-size;
+    height: $button-size;
+    line-height: $button-size;
+    text-align: center;
+    border-radius: $button-radius;
+    margin: 0 $button-size * 0.25;
+    overflow: hidden;
+    background: #fff;
+    border: 2px solid #000;
+    color: $primary-text-color;
+    font-size: $content-font-size * 0.75;
+    float: left;
+    opacity: 0.9;
+    
+    &:hover {
+      color: #66f;
+      opacity: 1;
+    }
+    
+    .large-font & {
+      width: $button-size * 1.5;
+      height: $button-size * 1.5;
+      border-width: 3px;
+      line-height: $button-size * 1.5;
+      border-radius: $button-radius * 1.5;
+      margin: 0 $button-size * 0.375;
+      font-size: $content-font-size * 0.75 * 1.5;
+    }
+    
+    &.contrasted {
+      background-color: $contrasted-background-color;
+      border-color: $contrasted-border-color;
+      text-indent: -3000em;
+    }
+    
+    &.normal-contrast {
+      background-color: $primary-background-color;
+      border-color: $primary-border-color;
+      text-indent: -3000em;
+    }
+  }
+  
+  .large-font  { display: block; }
+  .normal-font { display: none;  }
+  
+  .large-font & {
+    .large-font  { display: none;  }
+    .normal-font { display: block; }
+  }
+  
+  .contrasted      { display: block; }
+  .normal-contrast { display: none; }
+  
+  .contrasted & {
+    .contrasted      { display: none;  }
+    .normal-contrast { display: block; }
   }
 }
