@@ -3,7 +3,9 @@ layout: application
 title: Tom-Eric Gerritsen
 ---
 
-# Bio
+<div class="avatar"><img src="/img/tom-eric.jpg" alt="Picture of Tom-Eric Gerritsen" title="Tom-Eric in Buriram, Thailand"></div>
+
+# About Me
 
 Hi! My name is Tom-Eric Gerritsen. I am co-founder and lead-developer at [Eet.nu]. I [love programming][My GitHub Account] and all other aspects of development.
 
