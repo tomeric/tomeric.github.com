@@ -4,3 +4,4 @@ permalink: /:title.html
 plugins: ./_plugins
 keep_files: [".git"]
 exclude: ["Gemfile", "Gemfile.lock", ".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
+include: [".nojekyll"]
