@@ -9,7 +9,7 @@ My website is open source so you can learn from my mistakes. Feel free to fork
 and add spelling corrections, bugfixes and more, but please don't steal my
 content and claim it as your own.
 
-## License
+## [License](http://en.wikipedia.org/wiki/WTFPL)
 
               [DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE]
                        Version 2, December 2004
@@ -24,5 +24,3 @@ content and claim it as your own.
       TERMS AND CONDITIONS FOR COPYING, DISTRIBUTION AND MODIFICATION
 
      0. You just DO WHAT THE FUCK YOU WANT TO.
-
-[DO WHAT THE FUCK YOU WANT TO PUBLIC LICENSE](http://en.wikipedia.org/wiki/WTFPL)
