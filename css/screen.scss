@@ -6,7 +6,6 @@
 @import 'inc/reset_revisited.css';
 
 $baseline: 24px;
-$max-width: 800px;
 
 $primary-background-color: #fafaeb;
 $primary-light-background-color: #fff;
@@ -28,6 +27,8 @@ $content-line-height: $baseline;
 
 $header-font-family: $content-font-family;
 
+$max-width: $content-font-size * 46;
+
 html, body {
   margin: 0;
   padding: 0;
@@ -36,6 +37,8 @@ html, body {
 }
 
 body {
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
   font-family: $content-font-family;
   font-weight: normal;
   font-weight: 400;
@@ -43,15 +46,26 @@ body {
   line-height: $baseline;
   
   background-color: $primary-background-color;
+  background-image: -webkit-linear-gradient(darken($primary-background-color, 5%), $primary-background-color) no-repeat;
+  background-image:    -moz-linear-gradient(darken($primary-background-color, 5%), $primary-background-color) no-repeat;
+  background-image:     -ms-linear-gradient(darken($primary-background-color, 5%), $primary-background-color) no-repeat;
+  background-image:      -o-linear-gradient(darken($primary-background-color, 5%), $primary-background-color) no-repeat;
+  background-image:         linear-gradient(darken($primary-background-color, 5%), $primary-background-color) no-repeat;
+  
   color: $primary-text-color;
   
-  transition:         width 0.2s linear, height 0.2s linear, max-width 0.2s linear, background-color 0.2s ease-out, color 0.2s ease-in, border-color 0.2s ease-in;
-  -moz-transition:    width 0.2s linear, height 0.2s linear, max-width 0.2s linear, background-color 0.2s ease-out, color 0.2s ease-in, border-color 0.2s ease-in;
-  -webkit-transition: width 0.2s linear, height 0.2s linear, max-width 0.2s linear, background-color 0.2s ease-out, color 0.2s ease-in, border-color 0.2s ease-in;
-  -o-transition:      width 0.2s linear, height 0.2s linear, max-width 0.2s linear, background-color 0.2s ease-out, color 0.2s ease-in, border-color 0.2s ease-in;
+  transition:         width 0.4s linear, height 0.4s linear, max-width 0.4s linear, background-color 0.4s ease-out, color 0.4s ease-in, border-color 0.4s ease-in;
+  -moz-transition:    width 0.4s linear, height 0.4s linear, max-width 0.4s linear, background-color 0.4s ease-out, color 0.4s ease-in, border-color 0.4s ease-in;
+  -webkit-transition: width 0.4s linear, height 0.4s linear, max-width 0.4s linear, background-color 0.4s ease-out, color 0.4s ease-in, border-color 0.4s ease-in;
+  -o-transition:      width 0.4s linear, height 0.4s linear, max-width 0.4s linear, background-color 0.4s ease-out, color 0.4s ease-in, border-color 0.4s ease-in;
   
   .contrasted & {
     background-color: $contrasted-background-color;
+    background-image: -webkit-linear-gradient(lighten($contrasted-background-color, 5%), $contrasted-background-color) no-repeat;
+    background-image:    -moz-linear-gradient(lighten($contrasted-background-color, 5%), $contrasted-background-color) no-repeat;
+    background-image:     -ms-linear-gradient(lighten($contrasted-background-color, 5%), $contrasted-background-color) no-repeat;
+    background-image:      -o-linear-gradient(lighten($contrasted-background-color, 5%), $contrasted-background-color) no-repeat;
+    background-image:         linear-gradient(lighten($contrasted-background-color, 5%), $contrasted-background-color) no-repeat;
     color: $contrasted-text-color;
   }
   
