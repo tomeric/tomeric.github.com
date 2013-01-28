@@ -6,30 +6,42 @@ html, body {
   height: 100%; }
 
 body {
+  text-rendering: optimizeLegibility;
+  -webkit-text-size-adjust: 100%;
   font-family: "Raleway", sans-serif;
   font-weight: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 24px;
   background-color: #fafaeb;
+  background-image: -webkit-linear-gradient(#f5f5d7, #fafaeb) no-repeat;
+  background-image: -moz-linear-gradient(#f5f5d7, #fafaeb) no-repeat;
+  background-image: -ms-linear-gradient(#f5f5d7, #fafaeb) no-repeat;
+  background-image: -o-linear-gradient(#f5f5d7, #fafaeb) no-repeat;
+  background-image: linear-gradient(#f5f5d7, #fafaeb) no-repeat;
   color: #1a2a2a;
-  transition: width 0.2s linear, height 0.2s linear, max-width 0.2s linear, background-color 0.2s ease-out, color 0.2s ease-in, border-color 0.2s ease-in;
-  -moz-transition: width 0.2s linear, height 0.2s linear, max-width 0.2s linear, background-color 0.2s ease-out, color 0.2s ease-in, border-color 0.2s ease-in;
-  -webkit-transition: width 0.2s linear, height 0.2s linear, max-width 0.2s linear, background-color 0.2s ease-out, color 0.2s ease-in, border-color 0.2s ease-in;
-  -o-transition: width 0.2s linear, height 0.2s linear, max-width 0.2s linear, background-color 0.2s ease-out, color 0.2s ease-in, border-color 0.2s ease-in; }
+  transition: width 0.4s linear, height 0.4s linear, max-width 0.4s linear, background-color 0.4s ease-out, color 0.4s ease-in, border-color 0.4s ease-in;
+  -moz-transition: width 0.4s linear, height 0.4s linear, max-width 0.4s linear, background-color 0.4s ease-out, color 0.4s ease-in, border-color 0.4s ease-in;
+  -webkit-transition: width 0.4s linear, height 0.4s linear, max-width 0.4s linear, background-color 0.4s ease-out, color 0.4s ease-in, border-color 0.4s ease-in;
+  -o-transition: width 0.4s linear, height 0.4s linear, max-width 0.4s linear, background-color 0.4s ease-out, color 0.4s ease-in, border-color 0.4s ease-in; }
   .contrasted body {
     background-color: #19324b;
+    background-image: -webkit-linear-gradient(#1f3f5e, #19324b) no-repeat;
+    background-image: -moz-linear-gradient(#1f3f5e, #19324b) no-repeat;
+    background-image: -ms-linear-gradient(#1f3f5e, #19324b) no-repeat;
+    background-image: -o-linear-gradient(#1f3f5e, #19324b) no-repeat;
+    background-image: linear-gradient(#1f3f5e, #19324b) no-repeat;
     color: #bfbfbf; }
   .large-font body {
     font-size: 24px;
     line-height: 36px; }
 
 #content {
-  max-width: 800px;
+  max-width: 736px;
   margin: 0 auto;
   padding: 0 10px; }
   .large-font #content {
-    max-width: 1000px; }
+    max-width: 920px; }
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
