@@ -5,7 +5,7 @@ layout: application
 <article class="article">
   <header>
     <h1>{{ page.title }}</h1>
-    <p class="metadata"><time datetime="{{ page.date | date: '%Y-%m-%d' }}" pubdate>{{ page.date | date: "%e %b %Y" }}</time></p>
+    <p class="metadata">By <a href="/" class="author">Tom-Eric Gerritsen</a> on <time datetime="{{ page.date | date: '%Y-%m-%d' }}" pubdate>{{ page.date | date: "%e %b %Y" }}</time></p>
   </header>
   
   {{ content }}
