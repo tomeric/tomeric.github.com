@@ -8,7 +8,7 @@ html, body {
 body {
   text-rendering: optimizeLegibility;
   -webkit-text-size-adjust: 100%;
-  font-family: "Raleway", sans-serif;
+  font-family: "Merriweather", Georgia, serif;
   font-weight: normal;
   font-weight: 400;
   font-size: 16px;
@@ -145,6 +145,18 @@ a {
     border-color: rgba(50, 101, 152, 0.8);
     background: #326598;
     background: rgba(50, 101, 152, 0.8); }
+
+.article header {
+  text-align: center;
+  font-weight: lighter;
+  font-weight: 300;
+  margin-top: 60px;
+  margin-bottom: 48px; }
+  .article header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    font-weight: 700;
+    margin-bottom: 12px; }
 
 .accessibility {
   display: block;
