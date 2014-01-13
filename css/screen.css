@@ -217,3 +217,5 @@ a {
     display: none; }
   .contrasted .accessibility .normal-contrast {
     display: block; }
+  .supports-devicelight .accessibility .contrasted, .supports-devicelight .accessibility .normal-contrast {
+    display: none; }
