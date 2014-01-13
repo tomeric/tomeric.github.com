@@ -102,9 +102,10 @@ document.onclick = function(event) {
 }
 
 window.addEventListener('devicelight', function(e) {
-  var lux = e.value;
+  var lux  = e.value;
+  var html = document.documentElement;
   
-  console.log("Lux: " + lux);
+  html.className += ' supports-devicelight';
   
   if (lux <= 65) {
     docCookies.setItem('contrasted', 'yes');

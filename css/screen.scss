@@ -277,4 +277,10 @@ a {
     .contrasted      { display: none;  }
     .normal-contrast { display: block; }
   }
+  
+  .supports-devicelight & {
+    .contrasted, .normal-contrast {
+      display: none;
+    }
+  }
 }
