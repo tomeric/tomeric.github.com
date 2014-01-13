@@ -101,4 +101,18 @@ document.onclick = function(event) {
   }
 }
 
+window.addEventListener('devicelight', function(e) {
+  var lux = e.value;
+  
+  console.log("Lux: " + lux);
+  
+  if (lux <= 65) {
+    docCookies.setItem('contrasted', 'yes');
+  } else {
+    docCookies.setItem('contrasted', 'no');
+  }
+  
+  applyAccessibility();
+});
+
 applyAccessibility();
