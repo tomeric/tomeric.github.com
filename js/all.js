@@ -107,7 +107,7 @@ window.addEventListener('devicelight', function(e) {
   
   html.className += ' supports-devicelight';
   
-  if (lux <= 65) {
+  if (lux <= 40) {
     docCookies.setItem('contrasted', 'yes');
   } else {
     docCookies.setItem('contrasted', 'no');
